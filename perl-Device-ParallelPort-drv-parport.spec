@@ -9,7 +9,7 @@ Summary:	Device::ParallelPort - driver that uses direct I/O access
 Summary(pl):	Device::ParallelPort - sterownik u¿ywaj±cy bezpo¶redniego wej¶cia/wyj¶cia
 Name:		perl-Device-ParallelPort-drv-parport
 Version:	1.0
-Release:	1
+Release:	2
 # same as perl (?)
 # README says it is Artistic only, LICENSE says it is LGPL or Artistic
 License:	GPL v1+ or Artistic
