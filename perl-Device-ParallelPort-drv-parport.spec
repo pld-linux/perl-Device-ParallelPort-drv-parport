@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Device
 %define	pnam	ParallelPort-drv-parport
-Summary:	Device::ParallelPort driver that uses direct I/O access
-Summary(pl):	Sterownik Device::ParallelPort u¿ywaj±cy bezpo¶redniego wej¶cia/wyj¶cia
+Summary:	Device::ParallelPort - driver that uses direct I/O access
+Summary(pl):	Device::ParallelPort - sterownik u¿ywaj±cy bezpo¶redniego wej¶cia/wyj¶cia
 Name:		perl-Device-ParallelPort-drv-parport
 Version:	1.0
 Release:	1
