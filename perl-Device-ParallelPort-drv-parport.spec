@@ -1,30 +1,38 @@
-
+#
 # Conditional build:
 %bcond_without	tests	# do perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Device
 %define	pnam	ParallelPort-drv-parport
-Summary:	Device::ParallelPort
+Summary:	Device::ParallelPort driver that uses direct I/O access
+Summary(pl):	Sterownik Device::ParallelPort u¿ywaj±cy bezpo¶redniego wej¶cia/wyj¶cia
 Name:		perl-Device-ParallelPort-drv-parport
 Version:	1.0
 Release:	1
 # same as perl
-License:	GPL/Artistic
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	901987e4a37bfe2d7241530bda05f36e
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Device::ParallelPort)
+BuildRequires:	perl-Device-ParallelPort
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-If you run your program with `perl -d:Trace program', this module will
-print a message to standard error just before each line is executed.
-This is is something like the shell's `-x' option.
+This is a Device::ParallelPort driver that uses direct I/O access on
+Linux. It uses the Linux parport driver and is definitely the prefered
+access method on Linux. It also means that you do not require root
+access.
+
+%description -l pl
+To jest sterownik Device::ParallelPort u¿ywaj±cy bezpo¶redniego
+dostêpu do wej¶cia/wyj¶cia pod Linuksem. Korzysta z linuksowego
+sterownika portu równoleg³ego i jest preferowan± metod± dostêpu
+na Linuksie. Oznacza to tak¿e, ¿e nie trzeba mieæ praw roota.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -33,20 +41,29 @@ This is is something like the shell's `-x' option.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
-%{__make}
+%{__make} \
+	OPTMIZE="%{rpmcflags}"
 
-%{?with_tests:make test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc Changes README
+%dir %{perl_vendorarch}/Device/ParallelPort
+%dir %{perl_vendorarch}/Device/ParallelPort/drv
 %{perl_vendorarch}/Device/ParallelPort/drv/parport.pm
+%dir %{perl_vendorarch}/auto/Device/ParallelPort
+%dir %{perl_vendorarch}/auto/Device/ParallelPort/drv
+%dir %{perl_vendorarch}/auto/Device/ParallelPort/drv/parport
 %{perl_vendorarch}/auto/Device/ParallelPort/drv/parport/parport.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Device/ParallelPort/drv/parport/parport.so
 %{_mandir}/man3/*
