@@ -10,8 +10,9 @@ Summary(pl):	Device::ParallelPort - sterownik u¿ywaj±cy bezpo¶redniego wej¶cia/w
 Name:		perl-Device-ParallelPort-drv-parport
 Version:	1.0
 Release:	1
-# same as perl
-License:	GPL or Artistic
+# same as perl (?)
+# README says it is Artistic only, LICENSE says it is LGPL or Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	901987e4a37bfe2d7241530bda05f36e
