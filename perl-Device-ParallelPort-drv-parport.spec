@@ -6,7 +6,7 @@
 %define		pdir	Device
 %define		pnam	ParallelPort-drv-parport
 Summary:	Device::ParallelPort - driver that uses direct I/O access
-Summary(pl):	Device::ParallelPort - sterownik u¿ywaj±cy bezpo¶redniego wej¶cia/wyj¶cia
+Summary(pl.UTF-8):   Device::ParallelPort - sterownik uÅ¼ywajÄ…cy bezpoÅ›redniego wejÅ›cia/wyjÅ›cia
 Name:		perl-Device-ParallelPort-drv-parport
 Version:	1.0
 Release:	2
@@ -29,11 +29,11 @@ Linux. It uses the Linux parport driver and is definitely the prefered
 access method on Linux. It also means that you do not require root
 access.
 
-%description -l pl
-To jest sterownik Device::ParallelPort u¿ywaj±cy bezpo¶redniego
-dostêpu do wej¶cia/wyj¶cia pod Linuksem. Korzysta z linuksowego
-sterownika portu równoleg³ego i jest preferowan± metod± dostêpu
-na Linuksie. Oznacza to tak¿e, ¿e nie trzeba mieæ praw roota.
+%description -l pl.UTF-8
+To jest sterownik Device::ParallelPort uÅ¼ywajÄ…cy bezpoÅ›redniego
+dostÄ™pu do wejÅ›cia/wyjÅ›cia pod Linuksem. Korzysta z linuksowego
+sterownika portu rÃ³wnolegÅ‚ego i jest preferowanÄ… metodÄ… dostÄ™pu
+na Linuksie. Oznacza to takÅ¼e, Å¼e nie trzeba mieÄ‡ praw roota.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
