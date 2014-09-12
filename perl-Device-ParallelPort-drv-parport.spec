@@ -65,6 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Device/ParallelPort
 %dir %{perl_vendorarch}/auto/Device/ParallelPort/drv
 %dir %{perl_vendorarch}/auto/Device/ParallelPort/drv/parport
-%{perl_vendorarch}/auto/Device/ParallelPort/drv/parport/parport.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Device/ParallelPort/drv/parport/parport.so
 %{_mandir}/man3/*
