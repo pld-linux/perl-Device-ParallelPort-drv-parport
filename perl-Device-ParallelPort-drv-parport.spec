@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Device
 %define		pnam	ParallelPort-drv-parport
+%include	/usr/lib/rpm/macros.perl
 Summary:	Device::ParallelPort - driver that uses direct I/O access
 Summary(pl.UTF-8):	Device::ParallelPort - sterownik używający bezpośredniego wejścia/wyjścia
 Name:		perl-Device-ParallelPort-drv-parport
@@ -16,6 +16,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	901987e4a37bfe2d7241530bda05f36e
+URL:		http://search.cpan.org/dist/Device-ParallelPort-drv-parport/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -32,8 +33,8 @@ access.
 %description -l pl.UTF-8
 To jest sterownik Device::ParallelPort używający bezpośredniego
 dostępu do wejścia/wyjścia pod Linuksem. Korzysta z linuksowego
-sterownika portu równoległego i jest preferowaną metodą dostępu
-na Linuksie. Oznacza to także, że nie trzeba mieć praw roota.
+sterownika portu równoległego i jest preferowaną metodą dostępu na
+Linuksie. Oznacza to także, że nie trzeba mieć praw roota.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
